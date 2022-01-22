@@ -8,7 +8,7 @@ class Solution(object):
         print(nums)
         l = []
         for i in range(nums[-1]+1):
-            print(i)
+            #print(i)
             if i not in nums:
                 l.append(i)
                 
