@@ -1,18 +1,15 @@
 class Solution(object):
-    def countstrs(self, s):
-        count = [0] * 256
-        for i in s:
-            count[ord(i)]+=1
-        return count
+    
     def firstUniqChar(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        count = self.countstrs(s)
-        index = -1
+        
+        ss = list(set(s))
+        dict = {}
+        for i in ss:
+            dict[i] = 0
+        for i in s:
+            dict[i] += 1
+        print (dict)
         for i in range(len(s)):
-            if count[ord(s[i])] == 1:
-                index = i
-                break
-        return index
+            if dict[s[i]] == 1:
+                return i
+        return -1
