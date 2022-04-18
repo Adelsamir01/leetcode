@@ -1,22 +1,21 @@
 class Solution(object):
-    def countstrs(self, x):
-        count = [0] * 256
-        for i in x:
-            count[ord(i)]+=1
-        return count
-    
+  
     def isAnagram(self, s, t):
         """
         :type s: str
         :type t: str
         :rtype: bool
         """
-        count_s = self.countstrs(s)
-        count_t = self.countstrs(t)
-        
-        if count_s == count_t:
+        if self.counts(s) == self.counts(t):
             return True
         else:
             return False
-            
+        
+    def counts(self, x):
+        dict = {}
+        for i in set(x):
+            dict[i] = 0
+        for i in x:
+            dict[i]+=1
+        return dict
         
