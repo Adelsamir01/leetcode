@@ -2,7 +2,7 @@ class Solution(object):
     
     def firstUniqChar(self, s):
         
-        ss = list(set(s))
+        ss = set(s)
         dict = {}
         for i in ss:
             dict[i] = 0
